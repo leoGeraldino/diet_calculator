@@ -1,8 +1,6 @@
 :root{
     --texto-principal: #000;
     --borda-principal: #000;
-    --texto-secundaria: #87cf1b;
-    --cor-borda-secundaria: #000;
     --fundo-principal: #6ef50e;
     --fundo-secundario: #cccccc;
 }
@@ -25,7 +23,7 @@ header > h2, section{
     margin: 10px 0px 0px 15px;
 }
 
-header{
+header, footer{
     background-color: var(--fundo-principal);
     font-family:  'Cambria', 'Arial';
 }
@@ -64,4 +62,22 @@ button{
     margin-top: 15px;
     background-color: var(--fundo-principal);
     height: 30px;
+}
+
+table, tr, th, td{
+    margin: 0px;
+    font-family: 'Arial';
+}
+
+table{
+    background-color: var(--fundo-secundario);
+    border: 1px solid var(--borda-principal);
+}
+
+footer{
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: bold;
 }
