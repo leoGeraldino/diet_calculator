@@ -1,0 +1,1 @@
+Este projeto baseia-se na construção de uma calculadora de macronutrientes para atletas que desejam calcular sua necessidade nutricional, seja para bulking (ganho de massa magra), seja para cutting (perda de gordura).
