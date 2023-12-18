@@ -3,6 +3,8 @@
     --borda-principal: #000;
     --fundo-principal: #6ef50e;
     --fundo-secundario: #cccccc;
+    --cor-hover: #070707;
+    --cor-visited: #678876;
 }
 
 *{
@@ -80,4 +82,13 @@ footer{
     padding-bottom: 10px;
     text-align: center;
     font-weight: bold;
+    font-size: 15px;
+}
+
+a:visited{
+    color: var(--cor-visited);
+}
+
+a:hover{
+    color: var(--cor-hover);
 }
