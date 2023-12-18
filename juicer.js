@@ -24,4 +24,30 @@ function consumoDiario() {
     const tmb = calculaCalorias();
     const retornoConsumo = document.getElementById("caloriasDia");
     retornoConsumo.innerHTML = tmb.toFixed(2); 
+
+    const objetivo = parseInt(document.getElementById("objetivo").value);
+    const peso = parseFloat(document.getElementById("peso").value);
+    
+    let proteina = 0;
+    let carbos = 0;
+    let gordura = 0;
+    
+    if (objetivo == 1){
+        proteina = peso * 2;
+        gordura = peso;
+        carbos = peso * 3; 
+    } else {
+        proteina = peso * 2;
+        gordura = peso;
+        carbos = peso * 4; 
+    }
+    
+    const retornoProteina = document.getElementById("proteinas");
+    retornoProteina.innerHTML = proteina;
+
+    const retornoGordura = document.getElementById("gorduras");
+    retornoGordura.innerHTML = gordura;
+
+    const retornoCarbos = document.getElementById("carboidratos");
+    retornoCarbos.innerHTML = carbos;
 }
