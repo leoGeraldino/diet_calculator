@@ -23,7 +23,7 @@ function calculaCalorias() {
 function consumoDiario() {
     const tmb = calculaCalorias();
     const retornoConsumo = document.getElementById("caloriasDia");
-    retornoConsumo.innerHTML = tmb.toFixed(2); 
+    retornoConsumo.innerHTML = tmb.toFixed(2) + "kCal"; 
 
     const objetivo = parseInt(document.getElementById("objetivo").value);
     const peso = parseFloat(document.getElementById("peso").value);
@@ -43,11 +43,11 @@ function consumoDiario() {
     }
     
     const retornoProteina = document.getElementById("proteinas");
-    retornoProteina.innerHTML = proteina;
+    retornoProteina.innerHTML = proteina + "g";
 
     const retornoGordura = document.getElementById("gorduras");
-    retornoGordura.innerHTML = gordura;
+    retornoGordura.innerHTML = gordura + "g";
 
     const retornoCarbos = document.getElementById("carboidratos");
-    retornoCarbos.innerHTML = carbos;
+    retornoCarbos.innerHTML = carbos + "g";
 }
