@@ -16,7 +16,11 @@ function calculaCalorias() {
     }
 
     const baseTmb = (sexo === "feminino") ? 655 : 66;
-    const tmb = multiplicadorAtividade * (baseTmb + (9.6 * peso + 1.8 * altura - (sexo === "feminino" ? 4.7 : 6.8) * idade));
+    const multiplicadorPeso = (sexo === "feminino") ? 9.6 : 13.7;
+    const multiplicadorAltura = (sexo === "feminino") ? 1.8 : 5;
+    const multiplicadorIdade = (sexo === "feminino") ? 4.7 : 6.8;
+
+    const tmb = multiplicadorAtividade * (baseTmb + (multiplicadorPeso * peso + multiplicadorAltura * altura + multiplicadorIdade * idade));
     return tmb;
 }
 
@@ -28,19 +32,10 @@ function consumoDiario() {
     const objetivo = parseInt(document.getElementById("objetivo").value);
     const peso = parseFloat(document.getElementById("peso").value);
     
-    let proteina = 0;
-    let carbos = 0;
-    let gordura = 0;
-    
-    if (objetivo == 1){
-        proteina = peso * 2;
-        gordura = peso;
-        carbos = peso * 3; 
-    } else {
-        proteina = peso * 2;
-        gordura = peso;
-        carbos = peso * 4; 
-    }
+    let proteina = peso * 2;
+    let gordura = peso;
+    let fatorCarbos = (objetivo === 1) ? 0.9 : 1.05;
+    let carbos = (((tmb - proteina * 4 - gordura * 9)*fatorCarbos)/4).toFixed(2); 
     
     const retornoProteina = document.getElementById("proteinas");
     retornoProteina.innerHTML = proteina + "g";
