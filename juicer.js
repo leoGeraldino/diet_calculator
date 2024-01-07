@@ -34,7 +34,7 @@ function consumoDiario() {
     
     let proteina = peso * 2;
     let gordura = peso;
-    let fatorCarbos = (objetivo === 1) ? 0.9 : 1.05;
+    let fatorCarbos = (objetivo === 1) ? 0.9 : 1.1;
     let carbos = (((tmb - proteina * 4 - gordura * 9)*fatorCarbos)/4).toFixed(2); 
     
     const retornoProteina = document.getElementById("proteinas");
